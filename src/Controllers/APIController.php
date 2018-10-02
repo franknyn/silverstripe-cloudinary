@@ -143,11 +143,12 @@ class APIController extends Controller implements PermissionProvider
 
                     $count += count($data['resources']);
 
-                    $data = false;
-
                     if (array_key_exists('next_cursor', $data)) {
                         $data = $this->getPageFromCloudinary($resourceType, $data['next_cursor']);
+                    } else {
+                        $data = false;
                     }
+
                 }
             }
 
