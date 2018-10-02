@@ -15,19 +15,12 @@ trait CloudinaryFileTrait
     private $remoteData;
 
     private static $db = [
-        'PublicID' => 'Varchar(255)',
         'SecureURL' => 'Varchar(1000)',
         'ResourceType' => 'Varchar',
         'Description' => 'Text',
         'Type' => 'Varchar',
         'Format' => 'Varchar(10)',
         'Bytes' => 'Int',
-    ];
-
-    private static $indexes = [
-        'PublicID' => [
-            'type' => 'unique',
-        ],
     ];
 
     public static function getOneByPublicId($publicId)
